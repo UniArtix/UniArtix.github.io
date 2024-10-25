@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+.speech{
+    height:100dvh;
+}
+
+input{
+    width: 100px;
+    margin-top: 20px;
+}
+
+.centerparent-flex, .centerparent-grid{
+    justify-content: center;    
+    align-items: center;  
+    text-align: center;
+    vertical-align: middle;
+}
+.centerparent-flex{
+    display: flex;
+}
+.centerparent-grid{
+    display: grid;
+}

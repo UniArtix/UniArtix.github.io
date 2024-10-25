@@ -1,0 +1,25 @@
+<html>
+<head><meta charset="utf-8" /></head>
+<script type="text/javascript" src="speech.js"></script>
+<link href="index.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./src/dict/pinyin_dict_notone.js"></script>
+<script type="text/javascript" src="./src/dict/pinyin_dict_withtone.js"></script>
+<script type="text/javascript" src="./src/pinyinUtil.js"></script>
+<script type="text/javascript" src="./src/zhuyinUtil.js"></script>
+<body>
+    <div class="centerparent-grid speech">
+        <div>
+        <div id="tempBox">...</div>        
+            <input id="startStopButton" type="button" value="start" onclick="startButton(event)"/>
+            <br>
+            <input id="speakButton" type="button" value="speak" onclick="speakButton(event)"/>
+            <br>
+            <label id="infoBox"></label>
+        </div>
+        <div id="chineseBox">...</div>
+        <img id="mouth" src="./image/mouth-1.png">
+        <video id="mouthvideo" width="320" height="240" autoplay muted src="./video/document_25.mp4" type="video/mp4">
+        </video>
+    </div>
+</body>
+</html>
