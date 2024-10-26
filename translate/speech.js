@@ -1,9 +1,13 @@
 var infoBox; 
 var tempBox; 
-var chineseBox;
+var chineseBox; //中文
 var startStopButton; 
 var recognizing = false; 
 var mouth = ['','ㄅ','ㄅ','ㄆ','ㄆ','ㄇ','ㄇ','ㄈ','ㄈ','ㄉ','ㄉ','ㄊ','ㄊ','ㄋ','ㄋ','ㄌ','ㄌ','ㄍ','ㄎ','ㄏ','ㄐ','ㄑ','ㄒ','ㄓ','ㄔ','ㄕ','ㄖ','ㄗ','ㄘ','ㄙ','ㄚ','ㄛ','ㄜ','ㄝ','ㄞ','ㄞ','ㄟ','ㄟ','ㄠ','ㄠ','ㄡ','ㄡ','ㄢ','ㄢ','ㄣ','ㄣ','ㄤ','ㄤ','ㄥ','ㄥ','ㄦ','ㄦ','ㄧ','ㄨ','ㄩ'];
+
+$(document).ready(function () {
+  console.log("Hello World!");
+});
 
 function startButton(event) {
   infoBox = document.getElementById("infoBox");
@@ -92,17 +96,3 @@ var changeimg = function (chinese,index,i){
   mouthvideo.setAttribute('src',  "./video/document_"+mouth.indexOf(chinese[index][i])+".mp4");
   mouthvideo.setAttribute('playbackRate', '10');
 }
-
-
-/*
-笙
-1. 語音輸入後調 gpt api
-2. 語音對到auido to face
-3. python 對 auido to face 及時操作
-
-曈
-1. 共編github
-2. 整理前端的東東
-4. 前端 對街後端 python 
-
-*/
