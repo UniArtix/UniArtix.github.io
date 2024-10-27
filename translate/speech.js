@@ -69,9 +69,11 @@ function startButton(event) {
 
 function speakButton(event) {
   //動畫設置
+  /*
   let vid = document.getElementById("mouthvideo");
   vid.playbackRate = 10;
-  
+  */
+
   //語音合成
   var msg = new SpeechSynthesisUtterance('語音輸入測試');
   window.speechSynthesis.speak(msg);
@@ -107,11 +109,29 @@ function speakButton(event) {
   }, 250);
 }
 
+var thin = 0, fat = 0, thinspeed = 0, fatspeed = 0;
 function changeimg(chinese,index,i,len){
   setTimeout(()=>{
     console.log(chinese[index][i] ,mouth.indexOf(chinese[index][i]), i);
-    mouthdom.src = "./image/mouth-"+mouth.indexOf(chinese[index][i])+".png"
-    mouthvideo.setAttribute('src',  "./video/document_"+mouth.indexOf(chinese[index][i])+".mp4");
+    //mouthdom.src = "./image/mouth-"+mouth.indexOf(chinese[index][i])+".png"
+    //mouthvideo.setAttribute('src',  "./video/document_"+mouth.indexOf(chinese[index][i])+".mp4");
+    switch(mouth.indexOf(chinese[index][i])%2){
+      case 1: fatspeed=10; thinspeed=-10; break;
+      case 0: thinspeed=10; fatspeed=-10; break;
+    }
   }
   , 250/ len * i );
+}
+
+
+function updateClock() {
+  thin += thinspeed;
+  fat += fatspeed;
+  fatspeed -= 5;
+  thinspeed -= 5;
+  thin = Math.min(100, Math.max(0, thin));
+  fat = Math.min(100, Math.max(0, fat));
+  instance.SendMessage('Object.002', 'changethin', thin);
+  instance.SendMessage('Object.002', 'changefat', fat);
+  setTimeout(updateClock, 10);
 }

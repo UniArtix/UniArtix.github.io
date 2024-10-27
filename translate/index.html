@@ -1,10 +1,14 @@
 <html>
-<head><meta charset="utf-8" /></head>
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="speech.js"></script>
-<link href="index.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="./src/pinyin_dict_withtone.js"></script>
-<script type="text/javascript" src="./src/pinyinUtil.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="speech.js"></script>
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./src/pinyin_dict_withtone.js"></script>
+    <script type="text/javascript" src="./src/pinyinUtil.js"></script>
+    <script type="text/javascript" src="./unity.js"></script>
+    <script type="text/javascript" src="src/Build/build_min2.loader.js"></script>
+</head>
 <body>
     <div class="centerparent-grid speech">
         <div>
@@ -16,9 +20,11 @@
             <label id="infoBox"></label>
         </div>
         <div id="chineseBox">...</div>
-        <img id="mouth" src="./image/mouth-1.png">
+        <!---<img id="mouth" src="./image/mouth-1.png">
         <video id="mouthvideo" width="320" height="240" autoplay muted src="./video/document_25.mp4" type="video/mp4">
-        </video>
+        </video>--->
+        <canvas id="unity-canvas" width=960 height=600 tabindex="-1" style="width: 960px; height: 600px; background: #231F20"></canvas>
     </div>
+
 </body>
 </html>
