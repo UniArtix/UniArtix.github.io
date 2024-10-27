@@ -1,4 +1,5 @@
-var infoBox, tempBox, chineseBox; 
+var infoBox, tempBox, chineseBox; //訊息 
+var mouthdom, mouthvideo; //動畫
 var startStopButton; 
 var recognizing = false; 
 var recognition;
@@ -9,7 +10,9 @@ $(document).ready(function () {
   tempBox = document.getElementById("tempBox"); 
   chineseBox = document.getElementById("chineseBox"); 
   startStopButton = document.getElementById("startStopButton"); 
-
+  mouthdom = document.getElementById("mouth");
+  mouthvideo = document.getElementById("mouthvideo");
+  
   /*確認瀏覽器是否支援API*/
   if (!('webkitSpeechRecognition' in window)) {  
     infoBox.innerText = "本瀏覽器不支援語音辨識，請更換瀏覽器！(Chrome 25 版以上才支援語音辨識)";
@@ -83,26 +86,32 @@ function speakButton(event) {
 
   /*動畫播放__需要重寫*/ 
   let speakanimation = setInterval(() => {
+      //檢查句子長度，是否結束
       if (index >= chinese.length-1)clearInterval(speakanimation);
-      //for (var i = 0; i< chinese[index].length; i++){
-        switch(chinese[index][0]){
+      
+      //將文字注音逐個撥放，每個文字共250ms
+      for (var i = 0; i< chinese[index].length; i++){
+        switch(chinese[index][i]){
           case' ': case'ˋ': case'ˇ': case'ˊ': case'ˉ': break;
           case undefined:    
             mouthdom.src = "./image/mouth-1.png";
             break;
           default:
-            changeimg(chinese,index,0);
+            //更換動畫
+            changeimg(chinese,index,i,chinese[index].length);
         }
-      //}
+      }
+
+      //下一個字      
       index++;
   }, 250);
 }
 
-function changeimg(chinese,index,i){
-  var mouthdom = document.getElementById("mouth");
-  var mouthvideo = document.getElementById("mouthvideo");
-  console.log(chinese[index][i] ,mouth.indexOf(chinese[index][i]));
-  mouthdom.src = "./image/mouth-"+mouth.indexOf(chinese[index][i])+".png"
-  mouthvideo.setAttribute('src',  "./video/document_"+mouth.indexOf(chinese[index][i])+".mp4");
-  mouthvideo.setAttribute('playbackRate', '10');
+function changeimg(chinese,index,i,len){
+  setTimeout(()=>{
+    console.log(chinese[index][i] ,mouth.indexOf(chinese[index][i]), i);
+    mouthdom.src = "./image/mouth-"+mouth.indexOf(chinese[index][i])+".png"
+    mouthvideo.setAttribute('src',  "./video/document_"+mouth.indexOf(chinese[index][i])+".mp4");
+  }
+  , 250/ len * i );
 }
