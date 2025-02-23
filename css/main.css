@@ -1,0 +1,68 @@
+html {
+    overflow: -moz-hidden-unscrollable;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+	overflow: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(255, 247, 229);
+    margin:0;
+    /*text-align:justify;*/
+    text-justify: inter-ideograph;
+}
+
+p, a , pre ,div, button{
+    color: white;
+    font-size: 0.9rem;
+    margin:0 auto;    
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family:"LiSong Pro";
+    direction: ltr;
+}
+
+
+a,a:hover,a:active,a:visited,a:link,a:focus{
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    outline:none;
+    text-decoration: none;
+}
+
+.nocopy{
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+.centerparent-flex, .centerparent-grid{
+    justify-content: center;    
+    align-items: center;  
+    text-align: center;
+    vertical-align: middle;
+}
+.centerparent-flex{
+    display: flex;
+}
+.centerparent-grid{
+    display: grid;
+}
+
+.logo{
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-image: url(../image/logo.png);
+    background-repeat: no-repeat;
+}
