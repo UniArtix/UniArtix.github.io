@@ -19,7 +19,7 @@ body {
 }
 
 p, a , pre ,div, button, span{
-    color: white;
+    color: rgb(208, 183, 116);
     font-size: min(2vh, 3vw);
     font-size: min(2dvh, 3dvw);
     margin:0 auto;    

@@ -14,27 +14,28 @@
     </head>
     <body>
         <div class="load centerparent-flex">...LOADING...</div>
-        <div class = "content centerparent-grid">
+        <div id = "content" class = "content centerparent-grid">
             <div class = "header centerparent-flex">
+                <div id = "work" class="btn" onclick="load('home')"><span>HOME</span></div>
                 <div id = "work" class="btn" onclick="load('work')"><span>WORK</span></div>
                 <div id = "about" class="btn" onclick="load('about')"><span>ABOUT</span></div>
                 <div id = "blog" class="btn" onclick="load('blog')"><span>BLOG</span></div>
                 <div id = "contacts" class="btn" onclick="load('contacts')"><span>CONTACTS</span></div>
             </div>
-            <div class = "logo centerparent-flex">
-                <div class = "fixcover"></div>
+            <div id = "changecontent" class = "logo centerparent-flex">
+                <div class = "fixcover" onload=""></div>
                 <video autoplay muted loop playsinline>
                     <source src="./video/logo.mp4?v=0" type="video/mp4" />
-                  </video>
+                </video>
             </div>
         </div>
     </body>
 
     <script>
-        
+        load('home');
         window.onresize = resizeWindowSize;
         window.onload=function(){
-            resizeWindowSize();
+            //resizeWindowSize();
             $(".load").fadeOut(1000);
         }
         function resizeWindowSize(){
@@ -48,7 +49,14 @@
             }
         }
         function load(id){
-
+            var endf = function(){
+                resizeWindowSize();
+                $(".load").fadeOut(1000);
+            }
+            var loadf = function(){
+                $( "#changecontent" ).load( "./html/"+id+".html", endf);
+            }
+            $(".load").fadeIn(500, loadf);
         }
     
     </script>
