@@ -1,9 +1,12 @@
 .load{
     width: 100vw;
     height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     position: fixed;
-    font-size: min(2vh, 3vw);
     letter-spacing: min(1vh, 1.5vw);
+    letter-spacing: min(1dvh, 1.5dvw);
     color: rgb(176, 161, 106);
     background-color: rgb(255, 247, 229);
+    z-index: 9999;
 }

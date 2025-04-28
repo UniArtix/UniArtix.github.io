@@ -15,13 +15,13 @@ body {
     background-size: cover;
     background-color: rgb(255, 247, 229);
     margin:0;
-    /*text-align:justify;*/
     text-justify: inter-ideograph;
 }
 
-p, a , pre ,div, button{
+p, a , pre ,div, button, span{
     color: white;
-    font-size: 0.9rem;
+    font-size: min(2vh, 3vw);
+    font-size: min(2dvh, 3dvw);
     margin:0 auto;    
     white-space: pre-wrap;
     word-wrap: break-word;

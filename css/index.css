@@ -2,14 +2,13 @@
     width:100vw;
     width: 100dvw;
     height: 6vh;
-    /*background-color: rgb(255, 185, 185);*/
+    height: 6dvh;
 }
 
 .btn {
     line-height: 50px;
     text-align: center;
     cursor: pointer;
-    font-size: min(2vh, 3vw);
     transition: all 0.3s;
     position: relative;
     height: 70%;
@@ -18,7 +17,9 @@
     justify-content: center;
     align-items: center;
     border-top: 0.1vh solid rgb(176, 161, 106);
+    border-top: 0.1dvh solid rgb(176, 161, 106);
     border-bottom: 0.1vh solid rgb(176, 161, 106);
+    border-bottom: 0.1dvh solid rgb(176, 161, 106);
 }
 .btn span {
     color: rgb(208, 183, 116);
@@ -38,6 +39,7 @@ opacity: 0;
 background-color: rgb(176, 161, 106);
 transform: scale(0.1, 1);
 border-radius: 1vh;
+border-radius: 1dvh;
 }
 .btn:hover span {
 color: white;
@@ -60,23 +62,23 @@ background-color: rgb(255, 255, 255);
 }
 .btn:hover::after {
 opacity: 0; 
-/*transform: scale(0.1, 1);*/
 }
 
 
 
 .logo{
     height: 94vh;
+    height: 94dvh;
     width: 100vw;
+    width: 100dvw;
     background-position: center;
     overflow: hidden;
-    /*background-image: url(../image/logo.gif);
-    background-repeat: no-repeat;*/
 }
 
 
 .fixcover{
     position:absolute;
     height: 94vh;
+    height: 94dvh;
     width: 100%;
 }
