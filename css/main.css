@@ -58,3 +58,11 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
 .centerparent-grid{
     display: grid;
 }
+
+input{
+    display:none;
+}
+
+.title{
+    font-weight: bold;
+}

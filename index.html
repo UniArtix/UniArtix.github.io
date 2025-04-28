@@ -22,11 +22,7 @@
                 <div id = "blog" class="btn" onclick="load('blog')"><span>BLOG</span></div>
                 <div id = "contacts" class="btn" onclick="load('contacts')"><span>CONTACTS</span></div>
             </div>
-            <div id = "changecontent" class = "logo centerparent-flex">
-                <div class = "fixcover" onload=""></div>
-                <video autoplay muted loop playsinline>
-                    <source src="./video/logo.mp4?v=0" type="video/mp4" />
-                </video>
+            <div id = "changecontent" class = "maincontain centerparent-grid">
             </div>
         </div>
     </body>
@@ -40,12 +36,12 @@
         }
         function resizeWindowSize(){
             if ($(window).height() / $(window).width() > 2160/3840){
-                $(".logo video").css("height","100vh");
-                $(".logo video").css("width","auto");
+                $(".maincontain video").css("height","100vh");
+                $(".maincontain video").css("width","auto");
             }
             else{
-                $(".logo video").css("width","100vw");
-                $(".logo video").css("height","auto");
+                $(".maincontain video").css("width","100vw");
+                $(".maincontain video").css("height","auto");
             }
         }
         function load(id){
