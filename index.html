@@ -10,12 +10,46 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="./css/main.css" rel="stylesheet" type="text/css">
         <link href="./css/index.css" rel="stylesheet" type="text/css">
+        <link href="./css/load.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-
+        <div class="load centerparent-flex">...LOADING...</div>
         <div class = "content centerparent-grid">
-            <div class = "logo"></div>
+            <div class = "header centerparent-flex">
+                <div id = "work" class="btn" onclick="load('work')"><span>WORK</span></div>
+                <div id = "about" class="btn" onclick="load('about')"><span>ABOUT</span></div>
+                <div id = "blog" class="btn" onclick="load('blog')"><span>BLOG</span></div>
+                <div id = "contacts" class="btn" onclick="load('contacts')"><span>CONTACTS</span></div>
+            </div>
+            <div class = "logo centerparent-flex">
+                <div class = "fixcover"></div>
+                <video autoplay muted loop playsinline>
+                    <source src="./video/logo.mp4" type="video/mp4" />
+                  </video>
+            </div>
         </div>
-
     </body>
+
+    <script>
+        
+        window.onresize = resizeWindowSize;
+        window.onload=function(){
+            resizeWindowSize();
+            $(".load").fadeOut(1);
+        }
+        function resizeWindowSize(){
+            if ($(window).height() / $(window).width() > 2160/3840){
+                $(".logo video").css("height","100vh");
+                $(".logo video").css("width","auto");
+            }
+            else{
+                $(".logo video").css("width","100vw");
+                $(".logo video").css("height","auto");
+            }
+        }
+        function load(id){
+
+        }
+    
+    </script>
 </html>

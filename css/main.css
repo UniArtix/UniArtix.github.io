@@ -58,11 +58,3 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
 .centerparent-grid{
     display: grid;
 }
-
-.logo{
-    height: 100vh;
-    width: 100vw;
-    background-position: center;
-    background-image: url(../image/logo.png);
-    background-repeat: no-repeat;
-}
